@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-require('dotenv').config();
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -11,7 +10,7 @@ app.use((req, res, next) => {
 const axios = require("axios");
 app.get("/weather", (req, res) => {
   const city = req.query.city;
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.OPENWEATHER_API_KEY}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=2601acd1ff00f2d48f651446e64e4fe6`;
   axios
     .get(url)
     .then((response) => {
